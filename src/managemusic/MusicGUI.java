@@ -56,6 +56,7 @@ public class MusicGUI extends javax.swing.JFrame{
         exitBtn = new javax.swing.JButton();
         playList1SizeBtn = new javax.swing.JButton();
         playList2SizeBtn = new javax.swing.JButton();
+        removeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,15 +158,20 @@ public class MusicGUI extends javax.swing.JFrame{
             }
         });
 
+        removeBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        removeBtn.setText("Delete all \"Liked Songs\"");
+        removeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -201,7 +207,12 @@ public class MusicGUI extends javax.swing.JFrame{
                                         .addComponent(playlis2Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                         .addComponent(shufflelist2Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(playList2SizeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(removeBtn)
+                            .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -227,7 +238,9 @@ public class MusicGUI extends javax.swing.JFrame{
                     .addComponent(searchBtn)
                     .addComponent(addBtn)
                     .addComponent(displayBtn))
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(removeBtn)
+                .addGap(10, 10, 10)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -330,6 +343,17 @@ public class MusicGUI extends javax.swing.JFrame{
                
     }//GEN-LAST:event_playlist1BtnActionPerformed
 
+    private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
+        
+        if(stackInterface.isEmpty()){
+            nameAndSongTA.append("There are currently no songs to remove\n");
+        }else{
+            stackInterface.emptyStack();
+            nameAndSongTA.append("All songs have been removed\n");
+        }
+        
+    }//GEN-LAST:event_removeBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -383,6 +407,7 @@ public class MusicGUI extends javax.swing.JFrame{
     private javax.swing.JTextArea playListTA;
     private javax.swing.JButton playlis2Btn;
     private javax.swing.JButton playlist1Btn;
+    private javax.swing.JButton removeBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JButton shuffle1Btn;
     private javax.swing.JButton shufflelist2Btn;
