@@ -318,7 +318,8 @@ public class MusicGUI extends javax.swing.JFrame{
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void playList1SizeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playList1SizeBtnActionPerformed
-                playListTA.append(stackInterface.playList1Size());
+        //calling the playListSize methid of playList1         
+        playListTA.append(stackInterface.playList1Size());
     }//GEN-LAST:event_playList1SizeBtnActionPerformed
 
     private void playList2SizeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playList2SizeBtnActionPerformed
