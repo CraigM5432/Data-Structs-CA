@@ -99,7 +99,7 @@ public class MyStack implements MusicInterface{
             return "Sorry, there are no songs in this playlist.\n";
         } else {
             int iSize = playListGenreA.size();
-            return String.valueOf(iSize); // or return iSize + "";
+            return String.valueOf(iSize);
         }
     }
     
@@ -112,4 +112,61 @@ public class MyStack implements MusicInterface{
             return String.valueOf(iSize); // or return iSize + "";
         }
     }
+    
+//    @Override
+//    public Object removeLastNode(){
+//        
+//        if(theStack.isEmpty()){
+//            return "There are currently no songs in the liked playlist";
+//        }else{
+//            int lastIndex = theStack.size()-1;
+//            return theStack.remove(lastIndex);
+//        }
+//
+//}
+//    
+//    
+//    @Override
+//    public Object pop(){
+//        if(theStack.isEmpty()){
+//            return "There are currently no songs in the liked playlist";
+//        }else{
+//            
+//            playListGenreA.add(theStack.size()-1);
+//        }
+//            return "A song has been added to playlist 1"; 
+//    }
+    
+    @Override
+    public void addToGenrePlaylist(){
+
+        if(theStack.isEmpty()){
+            System.out.println("Sorry, there are currently no songs in the liked playlist");
+            return;
+            
+        }
+        
+        LikedSongs lastSong = (LikedSongs) theStack.get(theStack.size()-1);
+        
+        String genre = lastSong.getGenre();
+        
+        ArrayList<LikedSongs> genrePlaylist;
+        if(genre.equalsIgnoreCase("genreA")){
+            genrePlaylist = playListGenreA;
+            
+        }else if(genre.equalsIgnoreCase("genreB")){
+            genrePlaylist = playListGenreB;
+            
+        }else{
+            System.out.println("Genre not recognised");
+            return;
+        }
+        
+        genrePlaylist.add(new LikedSongs(lastSong.getArtist(), lastSong.getSong(), lastSong.getGenre()));
+        System.out.println("The last song of genre type " + genre + " has been added to the ");
+        
+    }
+    
 }
+    
+    

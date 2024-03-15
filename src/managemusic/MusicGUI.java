@@ -336,17 +336,20 @@ public class MusicGUI extends javax.swing.JFrame{
     }//GEN-LAST:event_playList1SizeBtnActionPerformed
 
     private void playList2SizeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playList2SizeBtnActionPerformed
+                //playListTA.append(stackInterface.playList2Size());
                 playListTA.append(stackInterface.playList2Size());
     }//GEN-LAST:event_playList2SizeBtnActionPerformed
 
     private void playlist1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlist1BtnActionPerformed
-               
+                stackInterface.addToGenrePlaylist();
+                playListTA.append("The last liked song was added to the genre playlist\n");
     }//GEN-LAST:event_playlist1BtnActionPerformed
 
     private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
-        
+        //if statement to check if the STACK is already empty and handle if it is 
         if(stackInterface.isEmpty()){
             nameAndSongTA.append("There are currently no songs to remove\n");
+        //else the emptyStack method is called to removed all objects in the STACK
         }else{
             stackInterface.emptyStack();
             nameAndSongTA.append("All songs have been removed\n");
