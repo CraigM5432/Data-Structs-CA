@@ -14,7 +14,8 @@ public class MainMusic {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        //declaring and creating an instance of MusicGUI and setting that instance visible to true 
+        //allowing the GUI to be displayed when the project has been asked to run 
         MusicGUI music = new MusicGUI();
         music.setVisible(true);
     }

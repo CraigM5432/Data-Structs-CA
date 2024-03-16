@@ -30,9 +30,9 @@ public interface MusicInterface{
     
     public String playList2Size();
     
-//    public Object removeLastNode();
-//    
-//    public Object pop();
+
     
-    public void addToGenrePlaylist();
+
+    
+   
 }

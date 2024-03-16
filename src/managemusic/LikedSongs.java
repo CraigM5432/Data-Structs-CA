@@ -20,7 +20,7 @@ public class LikedSongs{
         this.genre = genre;
     }
 
-  
+    //Getters and Setter methods 
 
     public String getArtist() {
         return artist;
@@ -46,6 +46,7 @@ public class LikedSongs{
         this.genre = genre;
     }
     
+    //methods returning the deatils of an added Object to theStack, a removed Object from theStack and the search details of an Object from theStack 
     public String getDetails(){
         return "Artist: " + getArtist() + ", Song: " + getSong() + " has been added to liked songs.";
     }

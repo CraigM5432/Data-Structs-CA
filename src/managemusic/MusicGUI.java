@@ -17,10 +17,11 @@ public class MusicGUI extends javax.swing.JFrame{
     /**
      * Creates new form MusicInterface
      */
-    
+    //declaring an instance of the MusicInterface interface
     MusicInterface stackInterface;
     
     public MusicGUI() {
+        //creating an instance of the MyStack class and assigning stackInterface to it
         stackInterface = new MyStack();
         initComponents();  
     }
@@ -309,8 +310,10 @@ public class MusicGUI extends javax.swing.JFrame{
     }//GEN-LAST:event_exitBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        //declaring a variable and assigning that variable to the text Field in the GUI 
         String search; 
         search = songTF.getText();
+        //Calling on the search method in the stackInterface and displaying the result in the Text Area
         nameAndSongTA.append(stackInterface.search(search));
     }//GEN-LAST:event_searchBtnActionPerformed
 
@@ -341,8 +344,8 @@ public class MusicGUI extends javax.swing.JFrame{
     }//GEN-LAST:event_playList2SizeBtnActionPerformed
 
     private void playlist1BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playlist1BtnActionPerformed
-                stackInterface.addToGenrePlaylist();
-                playListTA.append("The last liked song was added to the genre playlist\n");
+                //stackInterface.add();
+                //playListTA.append("The last liked song was added to the genre playlist\n");
     }//GEN-LAST:event_playlist1BtnActionPerformed
 
     private void removeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeBtnActionPerformed
@@ -352,6 +355,7 @@ public class MusicGUI extends javax.swing.JFrame{
         //else the emptyStack method is called to removed all objects in the STACK
         }else{
             stackInterface.emptyStack();
+            //appending the message to the Text Area
             nameAndSongTA.append("All songs have been removed\n");
         }
         
